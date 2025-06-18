@@ -1,6 +1,6 @@
 {
   "name": "@tweakor/forge",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Type-safe JavaScript extensions and polyfills.",
   "type": "module",
   "license": "MIT",
