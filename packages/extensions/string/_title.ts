@@ -1,3 +1,5 @@
+export { };
+
 declare global {
     interface String {
         _title(preserveCase?: boolean): string;
@@ -12,5 +14,3 @@ if (!String.prototype._title) {
             : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     };
 }
-
-export { };
