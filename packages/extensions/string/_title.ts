@@ -6,11 +6,10 @@ declare global {
     }
 }
 
-if (!String.prototype._title) {
-    String.prototype._title = function (preserveCase = false): string {
-        const str = this.toString();
-        return preserveCase
-            ? str.charAt(0).toUpperCase() + str.slice(1)
-            : str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    };
-}
+// runtime patch with safe fallback
+String.prototype._title ??= function (preserveCase = false): string {
+    const s = this.toString();
+    return preserveCase
+        ? s.charAt(0).toUpperCase() + s.slice(1)
+        : s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+};
